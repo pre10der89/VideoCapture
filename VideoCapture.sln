@@ -3,22 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VideoCaptureWinRT", "VideoCaptureWinRT", "{695A299F-A3EA-4B29-9BA1-6C783871FD74}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VideoCapture.WinRT", "VideoCapture.WinRT", "{695A299F-A3EA-4B29-9BA1-6C783871FD74}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VideoCaptureWinRT.Shared", "VideoCaptureWinRT\VideoCaptureWinRT.Shared\VideoCaptureWinRT.Shared.shproj", "{DC9BE82C-A9B6-4450-8EF4-744047BF0099}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "VideoCapture.WinRT.Shared", "VideoCaptureWinRT\VideoCaptureWinRT.Shared\VideoCapture.WinRT.Shared.shproj", "{DC9BE82C-A9B6-4450-8EF4-744047BF0099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCaptureWinRT.Windows", "VideoCaptureWinRT\VideoCaptureWinRT.Windows\VideoCaptureWinRT.Windows.csproj", "{5F8B53DE-BC01-4449-8D51-EAC5D2B07667}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.WinRT.Windows", "VideoCaptureWinRT\VideoCaptureWinRT.Windows\VideoCapture.WinRT.Windows.csproj", "{5F8B53DE-BC01-4449-8D51-EAC5D2B07667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCaptureWinRT.WindowsPhone", "VideoCaptureWinRT\VideoCaptureWinRT.WindowsPhone\VideoCaptureWinRT.WindowsPhone.csproj", "{02415179-D2B6-4BAD-A017-F0AC1668825C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.WinRT.WindowsPhone", "VideoCaptureWinRT\VideoCaptureWinRT.WindowsPhone\VideoCapture.WinRT.WindowsPhone.csproj", "{02415179-D2B6-4BAD-A017-F0AC1668825C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCaptureUWP", "VideoCaptureUWP\VideoCaptureUWP.csproj", "{2938B774-D920-485D-B4A5-0D70E1F2F60D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.UWP", "VideoCaptureUWP\VideoCapture.UWP.csproj", "{2938B774-D920-485D-B4A5-0D70E1F2F60D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D3E70CDE-2846-49E3-96B2-B01F2C8C714E}"
 	ProjectSection(SolutionItems) = preProject
 		Notes.txt = Notes.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.Common", "CommonUtilities\VideoCapture.Common.csproj", "{4BB389D5-B420-4AF2-B193-8710665B2C92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCapture.Common", "VideoCapture.Common\VideoCapture.Common.csproj", "{4BB389D5-B420-4AF2-B193-8710665B2C92}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
