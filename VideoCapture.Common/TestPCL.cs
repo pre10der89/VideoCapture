@@ -2,7 +2,7 @@
 // Copyright (c) AndrewForster. All rights reserved.
 // </copyright>
 
-namespace CommonUtilities
+namespace VideoCapture.Common
 {
     /// <summary>
     /// Class for testing PCL

@@ -1,1 +1,2 @@
 1) Suppressing Complier Warning CS1591 because it is invoking a warning for generated code
+2) How should Key.pfx be stored in a source repository?   Probably not a good idea to save?
