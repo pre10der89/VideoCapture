@@ -15,7 +15,7 @@ namespace CommonUtilities
         /// <returns>string</returns>
         public string GetString()
         {
-            return @"Hello World";
+            return @"Hello World!";
         }
     }
 }
