@@ -4,6 +4,7 @@
 
 namespace VideoCaptureUWP
 {
+    using VideoCapature.Common;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -14,6 +15,10 @@ namespace VideoCaptureUWP
         public MainPage()
         {
             this.InitializeComponent();
+
+            this.DataContext = new MainPageViewModel("VideoCapture (UWP)");
         }
+
+        public MainPageViewModel ViewModel => this.DataContext as MainPageViewModel;
     }
 }

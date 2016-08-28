@@ -1,2 +1,7 @@
 1) Suppressing Complier Warning CS1591 because it is invoking a warning for generated code
 2) How should Key.pfx be stored in a source repository?   Probably not a good idea to save?
+3) Creating Localized Resources Resw files
+4) How to share converters in a PCL   no access to using Windows.UI.Xaml.Data;
+5) Probably would be better to use a CollectionView for the device selection combo boxes
+6) Constructor of Page code behind is being called on a worker thread in UWP and so are all the execute command handlers... Need to figure out how to get
+   back to the UI Thread in UWP... 

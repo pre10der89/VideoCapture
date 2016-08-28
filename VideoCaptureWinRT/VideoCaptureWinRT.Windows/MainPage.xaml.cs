@@ -4,6 +4,7 @@
 
 namespace VideoCaptureWinRT
 {
+    using VideoCapature.Common;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -16,6 +17,8 @@ namespace VideoCaptureWinRT
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             this.InitializeComponent();
+
+            this.DataContext = new MainPageViewModel("VideoCapture (Windows 8.1)");
         }
     }
 }
