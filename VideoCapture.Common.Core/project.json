@@ -1,0 +1,9 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "StyleCop.Analyzers": "1.0.0"
+  },
+  "frameworks": {
+    ".NETPortable,Version=v4.6,Profile=Profile151": {}
+  }
+}

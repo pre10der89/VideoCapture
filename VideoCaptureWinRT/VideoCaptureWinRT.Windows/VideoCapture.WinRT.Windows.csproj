@@ -138,9 +138,9 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VideoCapture.Common\VideoCapture.Common.csproj">
+    <ProjectReference Include="..\..\VideoCapture.Common\VideoCapture.Common.ViewModel.csproj">
       <Project>{4bb389d5-b420-4af2-b193-8710665b2c92}</Project>
-      <Name>VideoCapture.Common</Name>
+      <Name>VideoCapture.Common.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

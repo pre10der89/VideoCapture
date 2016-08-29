@@ -4,7 +4,6 @@
 
 namespace VideoCaptureWinRT
 {
-    using VideoCapature.Common;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -18,7 +17,7 @@ namespace VideoCaptureWinRT
         {
             this.InitializeComponent();
 
-            this.DataContext = new MainPageViewModel("VideoCapture (Windows Phone)");
+          // this.DataContext = new MainPageViewModel("VideoCapture (Windows Phone)");
         }
     }
 }

@@ -2,8 +2,9 @@
 // Copyright (c) AndrewForster. All rights reserved.
 // </copyright>
 
-namespace VideoCaptureWinRT
+namespace VideoCaptureUWP
 {
+    using VideoCapature.Common;
     using Windows.UI.Xaml.Controls;
 
     /// <summary>
@@ -11,13 +12,13 @@ namespace VideoCaptureWinRT
     /// </summary>
     public sealed partial class MainPage : Page
     {
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public MainPage()
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             this.InitializeComponent();
 
-           // this.DataContext = new MainPageViewModel("VideoCapture (Windows 8.1)");
+            this.DataContext = new MainPageViewModel("VideoCapture (UWP)");
         }
+
+        public MainPageViewModel ViewModel => this.DataContext as MainPageViewModel;
     }
 }

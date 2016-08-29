@@ -8,8 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" 
-    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
-    Width="700" Height="500">
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -19,80 +18,23 @@
     
     <Interactivity:Interaction.Behaviors>
         <Core:EventTriggerBehavior EventName="Loaded">
-            <Core:InvokeCommandAction Command="{Binding LoadCommand}"/>
+            <Core:InvokeCommandAction Command="{Binding InitializeCommand}"/>
         </Core:EventTriggerBehavior>
+        <Core:EventTriggerBehavior EventName="Unloaded">
+            <Core:InvokeCommandAction Command="{Binding DeinitializeCommand}"/>
+        </Core:EventTriggerBehavior>        
     </Interactivity:Interaction.Behaviors>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ContentRoot" Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Margin="20,20,20,20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="{Binding Title, Mode=TwoWay}" Grid.Row="0" FontSize="24"/>
-            <Grid Grid.Row="2" HorizontalAlignment="Left">
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="40"/>
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="5"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="5"/>
-                    <ColumnDefinition Width="175"/>
-                </Grid.ColumnDefinitions>
-
-                
-                <StackPanel Grid.Row="0" Grid.Column="0">
-                    <TextBlock Text="Camera Devices"/>
-                    <ComboBox x:Name="CameraDeviceCB" ItemsSource="{Binding CameraDevices}" SelectedItem="{Binding CurrentCamera, Mode=TwoWay}" IsEnabled="{Binding IsCapturing, Converter={StaticResource InvertedBooleanConverter}}" Width="300">
-                        <Interactivity:Interaction.Behaviors>
-                            <Core:EventTriggerBehavior EventName="SelectionChanged">
-                                <Core:InvokeCommandAction Command="{Binding CameraSelectedCommand}" CommandParameter="{Binding SelectedItem,  ElementName=CameraDeviceCB}"/>
-                            </Core:EventTriggerBehavior>
-                        </Interactivity:Interaction.Behaviors>
-                    </ComboBox>
-
-                    <TextBlock Text="Microphone Devices" Margin="0,10,0,0"/>
-                    <ComboBox x:Name="MicrophoneDeviceCB" ItemsSource="{Binding MicrophoneDevices}" SelectedItem="{Binding CurrentMicrophone, Mode=TwoWay}" IsEnabled="{Binding IsCapturing, Converter={StaticResource InvertedBooleanConverter}}" Width="300">
-                        <Interactivity:Interaction.Behaviors>
-                            <Core:EventTriggerBehavior EventName="SelectionChanged">
-                                <Core:InvokeCommandAction Command="{Binding MicrophoneSelectedCommand}" CommandParameter="{Binding SelectedItem,  ElementName=MicrophoneDeviceCB}"/>
-                            </Core:EventTriggerBehavior>
-                        </Interactivity:Interaction.Behaviors>
-                    </ComboBox>
-                </StackPanel>
-
-                <Button Content="Start Capture" Command="{Binding ToggleCaptureStateCommand}"  Width="300"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0">
-                    <Interactivity:Interaction.Behaviors>
-                        <!--<Core:DataTriggerBehavior Binding="{Binding IsCaptureDevicesSelected}" Value="True">
-                            <Core:ChangePropertyAction PropertyName="IsEnabled" Value="True" />
-                        </Core:DataTriggerBehavior>
-                        <Core:DataTriggerBehavior Binding="{Binding IsCaptureDevicesSelected}" Value="False">
-                            <Core:ChangePropertyAction PropertyName="IsEnabled" Value="False" />
-                        </Core:DataTriggerBehavior>-->
-                        <Core:DataTriggerBehavior Binding="{Binding IsCapturing}" Value="True">
-                            <Core:ChangePropertyAction PropertyName="Content" Value="Stop Capture" />
-                        </Core:DataTriggerBehavior>
-                        <Core:DataTriggerBehavior Binding="{Binding IsCapturing}" Value="False">
-                            <Core:ChangePropertyAction PropertyName="Content" Value="Start Capture" />
-                        </Core:DataTriggerBehavior>
-                    </Interactivity:Interaction.Behaviors>
-                </Button>
-                
-                <StackPanel Grid.Row="0" Grid.Column="2" >
-                    <Canvas x:Name="previewCanvas2" Width="320"  Height="240" Background="Gray">
-                        <CaptureElement x:Name="previewElement2" Width="320" Height="240" />
-                    </Canvas>
-                </StackPanel>
-
-                <TextBlock Text="{Binding FileSaveLocation}" Grid.Row="2" Grid.ColumnSpan="5"/>
-            </Grid>
+            <local:MediaCaptureUserControl Grid.Row="2" Height="240" Width="320" DataContext="{Binding MediaCaptureVM}"/>
         </Grid>
     </Grid>
 </Page>
